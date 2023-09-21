@@ -6,17 +6,14 @@ import arrow from '../../../public/monthArrow.svg';
 export const DateSwitcher = () => {
     const [currentMonth, setCurrentMonth] = useState(new Date());
 
-    // Функция для переключения на предыдущий месяц
     const goToPreviousMonth = () => {
         setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1));
     };
 
-    // Функция для переключения на следующий месяц
     const goToNextMonth = () => {
         setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
     };
 
-    // Форматируем текущий месяц в строку (можно использовать библиотеку date-fns для более сложного форматирования)
     const formattedMonth = currentMonth.toLocaleString('default', { month: 'long', year: 'numeric' });
 
 
